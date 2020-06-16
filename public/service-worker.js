@@ -1,3 +1,4 @@
+// to reference which files to store in the cache
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
@@ -8,8 +9,9 @@ const FILES_TO_CACHE = [
   const CACHE_NAME = "static-cache-v2";
   const DATA_CACHE_NAME = "data-cache-v1";
   
-  // install
+  // set up event listener when installed
   self.addEventListener("install", function(evt) {
+    //   wait until cache is opened
     evt.waitUntil(
       caches.open(CACHE_NAME).then(cache => {
         console.log("Your files were pre-cached successfully!");
